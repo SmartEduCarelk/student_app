@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import '../utils/theme/themes.dart';
 
-
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -10,13 +8,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: AppThemes.lightTheme,
-      home: const Dashboard(),
+      home: const AnnouncementPage(),
     );
   }
 }
 
-class Dashboard extends StatelessWidget{
-  const Dashboard({super.key});
+class AnnouncementPage extends StatelessWidget{
+  const AnnouncementPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +35,7 @@ class Dashboard extends StatelessWidget{
 
             // title
             Text(
-              "DashBoard Page",
+              "Announcement Page",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 24,
@@ -48,7 +46,7 @@ class Dashboard extends StatelessWidget{
 
             // subtitle
             Text(
-              "This is DashBoard page",
+              "This is the Announcement page",
               style: TextStyle(
                 fontWeight: FontWeight.normal,
                 fontSize: 18,
