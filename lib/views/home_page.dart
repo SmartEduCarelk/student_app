@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../utils/theme/themes.dart';
+import '../components/home/home_status_widget.dart';
 
 
 
@@ -21,39 +22,14 @@ class HomePage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       backgroundColor: Theme.of(context).colorScheme.surface,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+
           children: [
-            // logo
-            Icon(
-              Icons.handyman_rounded,
-              size: 80,
-              color: AppThemes.lightTheme.primaryColor,
-            ),
-
-            const SizedBox(height: 30),
-
-            // title
-            Text(
-              "Home Page",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 24,
-              ),
-            ),
-
-            const SizedBox(height: 5),
-
-            // subtitle
-            Text(
-              "This is the Home page",
-              style: TextStyle(
-                fontWeight: FontWeight.normal,
-                fontSize: 18,
-              ),
-            ),
+            HomeStatusWidget(),
           ],
         ),
       )
