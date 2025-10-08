@@ -44,7 +44,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.explore_rounded), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.dashboard_rounded), label: "Class"),
-          BottomNavigationBarItem(icon: Icon(Icons.email_rounded), label: "AnnouncementPage"),
+          BottomNavigationBarItem(icon: Icon(Icons.email_rounded), label: "Noties"),
           BottomNavigationBarItem(icon: Icon(Icons.person_rounded), label: "Profile"),
         ],
       ),
