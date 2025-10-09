@@ -1,62 +1,68 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import '../utils/theme/themes.dart';
+import 'home_page.dart';
 
 
+class StartUpPage extends StatefulWidget {
+  const StartUpPage({super.key});
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  @override
+  _StartUpPageState createState() => _StartUpPageState();
+}
+
+class _StartUpPageState extends State<StartUpPage> {
+  @override
+  void initState() {
+    super.initState();
+    // Navigate to HomePage after 3 seconds
+    Timer(Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => HomePage()),
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: AppThemes.lightTheme,
-      home: const StartUpPage(),
-    );
-  }
-}
-
-class StartUpPage extends StatelessWidget{
-  const StartUpPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.surface,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // logo
-            Icon(
-              Icons.handyman_rounded,
-              size: 80,
-              color: AppThemes.lightTheme.primaryColor,
-            ),
-
-            const SizedBox(height: 30),
-
-            // title
-            Text(
-              "StartUp Page",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 24,
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.white, // Ensure full screen background is white
+        body: Center( // Center the content vertically and horizontally
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                'assets/images/logo.jpg',
+                width: 150,
+                height: 150,
+                errorBuilder: (context, error, stackTrace) {
+                  return Container(
+                    width: 150,
+                    height: 150,
+                    color: Colors.grey[300],
+                  );
+                },
               ),
-            ),
-
-            const SizedBox(height: 5),
-
-            // subtitle
-            Text(
-              "This is the Start-Up page",
-              style: TextStyle(
-                fontWeight: FontWeight.normal,
-                fontSize: 18,
+              SizedBox(height: 20),
+              Text(
+                'Loading',
+                style: TextStyle(fontSize: 24, color: Colors.black),
               ),
-            ),
-          ],
+              SizedBox(height: 50),
+              Text(
+                'SmartEduCare',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Color(0xFF9370DB),
+                ),
+              ),
+            ],
+          ),
         ),
-      )
+      ),
     );
   }
 }
